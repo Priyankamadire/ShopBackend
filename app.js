@@ -43,7 +43,9 @@ app.post("/api/posttshirts", async (req, res) => {
   await tshirt.save();
   res.json(tshirt);
 });
-
+app.get("/", (req, res) => {
+  res.send("hello");
+});
 app.delete("/api/delete/:id", async (req, res) => {
   try {
     const { id } = req.params;
