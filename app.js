@@ -33,10 +33,14 @@ const TShirtSchema = new mongoose.Schema({
 
 const TShirt = mongoose.model("TShirt", TShirtSchema);
 
+
+//get posted data
 app.get("/api/tshirts", async (req, res) => {
   const tshirts = await TShirt.find();
   res.json(tshirts);
-});
+});     
+
+
 
 app.post("/api/posttshirts", async (req, res) => {
   const tshirt = new TShirt(req.body);
